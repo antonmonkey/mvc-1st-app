@@ -12,7 +12,6 @@ class Router
 
 	}
 
-
 	// Return request string
 	private function getURI() 
 	{
@@ -47,11 +46,10 @@ class Router
 
 				// Link Controller file
 				$controllerFile = ROOT.'/controllers/'.$controllerName.'.php';
-
+// echo $controllerName.'<br>'.$actionName;die;
 				if (file_exists($controllerFile)) {
 					include_once($controllerFile);
 				}
-
 				// Create object, call action
 				$controllerObject = new $controllerName;
 				$result = call_user_func_array(array($controllerObject, $actionName), $parameters);
